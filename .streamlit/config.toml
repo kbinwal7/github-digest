@@ -7,3 +7,6 @@ textColor = "#e8edf5"
 font = "sans serif"
 borderColor = "#233144"
 showWidgetBorder = true
+
+[client]
+toolbarMode = "minimal"
