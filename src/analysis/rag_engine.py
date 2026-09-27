@@ -1,7 +1,10 @@
 import os
-from typing import List
+import time
+from typing import Any, List
+
 from google import genai
 from google.genai import types
+
 
 class ContributionRAGEngine:
     def __init__(self):
@@ -41,12 +44,28 @@ INSTRUCTIONS:
 4. Include the direct Markdown URL to the GitHub issue. Format cleanly using Markdown bullet points.
 """
 
-        # Call Gemini 2.5 Flash for fast synthesis
-        response = self.gemini.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.2  # Low temperature for strict factual alignment
-            )
-        )
-        return response.text
+        # Call Gemini for fast synthesis. Retry on transient overload (503)
+        # or rate-limit (429) errors rather than failing the whole search -
+        # these are usually temporary demand spikes, not something a
+        # different model would avoid.
+        max_retries = 5
+        delay_seconds = 2
+        for attempt in range(max_retries):
+            try:
+                response = self.gemini.models.generate_content(
+                    model="gemini-3.8-flash",
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=0.2  # Low temperature for strict factual alignment
+                    ),
+                )
+                return response.text
+            except Exception as exc:
+                is_transient = any(
+                    marker in str(exc)
+                    for marker in ("RESOURCE_EXHAUSTED", "429", "UNAVAILABLE", "503")
+                )
+                if not is_transient or attempt == max_retries - 1:
+                    raise
+                time.sleep(delay_seconds)
+                delay_seconds *= 2
