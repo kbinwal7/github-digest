@@ -382,7 +382,7 @@ st.markdown(
 
 st.markdown(
     '<div class="topbar"><div class="brand"><span class="brand-mark"></span></div>'
-    '<div class="live-pill">LIVE / DATA</div></div>',
+    '<div class="live-pill"></div></div>',
     unsafe_allow_html=True,
 )
 st.markdown('<div class="eyebrow">[G] GITHUB DIGEST</div>', unsafe_allow_html=True)
