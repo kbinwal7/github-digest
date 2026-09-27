@@ -75,17 +75,17 @@ st.markdown(
 
       .block-container {
         max-width: 1200px;
-        padding-top: 2.75rem;
-        padding-bottom: 4.5rem;
+        padding-top: 1.15rem;
+        padding-bottom: 3.5rem;
       }
 
       .topbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-bottom: 1rem;
+        padding-bottom: .7rem;
         border-bottom: 1px solid var(--line);
-        margin-bottom: 2.6rem;
+        margin-bottom: 1.25rem;
         margin-top: .25rem;
       }
 
@@ -115,15 +115,15 @@ st.markdown(
         font: 600 0.85rem var(--mono);
         letter-spacing: .12em;
         text-transform: uppercase;
-        margin-bottom: .55rem;
+        margin-bottom: .35rem;
       }
 
       .subtitle {
         color: var(--muted);
         max-width: 750px;
         line-height: 1.7;
-        margin: -.25rem 0 1.85rem;
-        font-size: 1.2rem;
+        margin: -.15rem 0 1rem;
+        font-size: 1.05rem;
       }
 
       h1, h2, h3 {
@@ -134,7 +134,7 @@ st.markdown(
 
       h1 {
         font-weight: 650;
-        font-size: 3rem;
+        font-size: 2.45rem;
       }
 
       h2, h3 {
@@ -150,7 +150,7 @@ st.markdown(
         background: var(--panel);
         border: 1px solid var(--line);
         border-radius: 10px;
-        padding: 1.1rem 1.2rem .55rem;
+        padding: .75rem .9rem .35rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, .14);
       }
 
@@ -295,14 +295,14 @@ st.markdown(
       .feature-row {
         display: flex;
         gap: 1.15rem;
-        margin-bottom: 1.85rem;
+        margin-bottom: .9rem;
       }
 
       .feature-card {
         flex: 1;
         border: 1px solid var(--line);
         border-radius: 10px;
-        padding: 1.3rem 1.45rem;
+        padding: .8rem 1rem;
         background: rgba(16, 23, 31, .7);
       }
 
@@ -330,15 +330,15 @@ st.markdown(
       .feature-card .f-title {
         color: var(--ink-soft);
         font-weight: 600;
-        font-size: 1.15rem;
-        line-height: 1.5;
-        margin-bottom: .3rem;
+        font-size: 1rem;
+        line-height: 1.35;
+        margin-bottom: .15rem;
       }
 
       .feature-card .f-desc {
         color: var(--muted);
-        font-size: 1rem;
-        line-height: 1.55;
+        font-size: .9rem;
+        line-height: 1.4;
       }
 
       .match-score {
@@ -381,10 +381,11 @@ st.markdown(
 )
 
 st.markdown(
-    '<div class="topbar"><div class="brand"><span class="brand-mark">[G]</span>GITHUB / DIGEST</div>'
+    '<div class="topbar"><div class="brand"><span class="brand-mark"></span></div>'
     '<div class="live-pill">LIVE / DATA</div></div>',
     unsafe_allow_html=True,
 )
+st.markdown('<div class="eyebrow">[G] GITHUB DIGEST</div>', unsafe_allow_html=True)
 st.markdown('<div class="eyebrow">Repository intelligence / 01</div>', unsafe_allow_html=True)
 st.title("Activity, at a glance.")
 st.markdown(
