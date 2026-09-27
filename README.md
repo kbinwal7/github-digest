@@ -2,6 +2,13 @@
 
 An AI-powered dashboard and RAG pipeline that surfaces actionable open-source contribution opportunities using Qdrant Cloud and Google Gemini.
 
+
+
+https://github.com/user-attachments/assets/9c8dad27-aac0-48dd-89ba-6587e63d059b
+
+
+
+
 **Live Demo:** [GitHub Digest](https://app-digest-caage9up7yluka9xnblxuc.streamlit.app/)
 
 
