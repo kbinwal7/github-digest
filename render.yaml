@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: github-digest
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
